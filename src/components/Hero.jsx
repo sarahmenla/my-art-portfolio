@@ -5,10 +5,9 @@ export default function Hero() {
     <section className="hero-section" id="hero">
       <div className="hero-overlay">
         <div className="hero-text">
-          <h1>Welcome to My Art World</h1>
+          <h1>Welcome to My Artwork Gallerey</h1>
           <p>
-            Explore my paintings, digital illustrations, and creative designs —
-            each piece a glimpse into color and emotion.
+            Explore my paintings, digital illustrations, and creative designs
           </p>
           <a href="#featured" className="btn btn-light mt-3">
             Explore My Work
