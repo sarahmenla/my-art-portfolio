@@ -36,7 +36,7 @@ export default function PaintingsPage() {
     { title: "Blush Garden", type: "Acrylic on Canvas", image: art3, colors: ["#D7ADAD", "#BC787E", "#628572"] },
     { title: "Countryside Tree", type: "Acrylic on Paper", image: art4, colors: ["#8FAD85", "#B8C9A7", "#4C5946"] },
     { title: "Autumn River", type: "Acrylic on Paper", image: art5, colors: ["#C28B5B", "#5E4932", "#A8B4C1"] },
-    { title: "Yellow Meadow", type: "Acrylic on Paper", image: art6, colors: ["#E5D67B", "#A3B874", "#4C6A33"] },
+    
   ];
 
   const gouachePaints = [
@@ -44,9 +44,6 @@ export default function PaintingsPage() {
   ];
 
   const watercolourPaints = [
-    { title: "Kiki's Delivery Service Cottage", type: "Watercolour on Paper", image: art8, colors: ["#E7C1B3", "#76947B", "#2F3A2F"], },
-    { title: "Lofi Girl", type: "Watercolour on Paper", image: art9, colors: ["#E8C4B2", "#A4785C", "#EAE2D6"], },
-    { title: "Reach The Candy", type: "Watercolour on Paper", image: art10, colors: ["#E9D7C3", "#C8A97D", "#7E5F49"], },
   ];
 
   return (
@@ -143,13 +140,7 @@ export default function PaintingsPage() {
         {/* 🎨 Watercolour Section */}
         <section id="watercolour" className="mb-5">
           <h2 className="text-center mb-4 fw-bold">Watercolour Paintings</h2>
-          <div className="row justify-content-center g-4">
-            {watercolourPaints.map((art, idx) => (
-              <div key={idx} className="col-12 col-md-4 d-flex justify-content-center">
-                <ArtworkCard {...art} />
-              </div>
-            ))}
-          </div>
+          <p className="text-center text-muted">Coming soon!</p>
         </section>
 
         {/* 🎨 Oil Section (Placeholder) */}
