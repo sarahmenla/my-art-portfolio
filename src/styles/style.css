@@ -1,0 +1,419 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== Hero Section ===== */
+.hero-section {
+  position: relative;
+  width: 100vw; /* full width of the viewport */
+  height: 80vh; /* shorter hero height */
+  background-image: url("/images/hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Fix potential page overflow */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* stops horizontal scroll and white gaps */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45); /* darker overlay for contrast */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-text {
+  max-width: 700px;
+  color: white;
+  margin: 0 auto;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  animation: fadeInDown 1s ease;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  animation: fadeInUp 1s ease;
+}
+
+/* Button styling tweak */
+.hero-text .btn {
+  font-weight: 500;
+  border-radius: 30px;
+  padding: 10px 24px;
+}
+
+/* Simple fade animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover Effects */
+.hover-effect {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-effect:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  margin: 0;
+  padding: 0.85rem 1rem; /* increases height */
+  min-height: 70px; /* ensures consistent height */
+}
+
+/* ===== Artwork Cards (Pop from Top) ===== */
+.art-card {
+  position: relative;
+  width: 100%;
+  max-width: 350px; /* cap size for consistency */
+  height: 480px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  margin: 10px; /* add breathing room */
+}
+
+.art-card:hover {
+  transform: translateY(-30px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.art-image-wrapper {
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+.art-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.art-card:hover .art-image {
+  transform: scale(1.05);
+}
+
+/* Info pops in from top */
+.art-info-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 10px 0;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: all 0.4s ease;
+}
+
+.art-card:hover .art-info-top {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Artwork Page Layout ===== */
+.artwork-page {
+  height: 100vh;
+  padding-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* lift the artwork slightly */
+  padding-bottom: 20px; /* adds nice white breathing space */
+  overflow: hidden; /* prevent scrollbars */
+}
+
+.artwork-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 80px;
+  margin-top: 10px;
+}
+
+/* Move the frame up slightly */
+.artwork-frame {
+  background: #b68a58;
+  border: 14px solid #8c6239;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  padding: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 82vh; /* fits nicely within viewport */
+  margin-top: 20px; /* keeps it visually balanced */
+}
+
+.artwork-full {
+  width: auto;
+  max-width: 80vw;   /* responsive width */
+  max-height: 75vh;  /* ensures full image fits in viewport */
+  border: 8px solid #fff8f0;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+
+.artwork-info {
+  margin-top: 80px;
+}
+
+.color-palette-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.color-swatch-vertical {
+  width: 180px;
+  height: 80px;
+  border-radius: 12px;
+  border: 2px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.color-swatch-vertical:hover {
+  transform: scale(1.05);
+}
+
+
+/* --- Frame --- */
+.artwork-frame {
+  background: #b68a58;
+  border: 14px solid #8c6239;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  padding: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px; /* moved lower from navbar */
+}
+
+/* --- Magnifier Lens --- */
+.magnifier-lens {
+  position: absolute;
+  border: 3px solid rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  background-repeat: no-repeat;
+  cursor: none;
+  display: none;
+  pointer-events: none;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+/* Ensure sections stop neatly below fixed navbar */
+section {
+  scroll-margin-top: 100px;
+}
+
+/* Improve spacing between cards (in case Bootstrap gap is overridden) */
+.art-card {
+  width: 100%;
+  max-width: 350px;
+  margin: 10px;
+}
+
+/* Default scroll offset */
+:root {
+  --scroll-offset: 140px;
+}
+
+section {
+  scroll-margin-top: var(--scroll-offset);
+}
+
+
+
+/* Sticky Paint Type Bar */
+.sticky-bar {
+  border-bottom: 1px solid #e2e2e2;
+  backdrop-filter: blur(5px);
+}
+
+/* Paint type buttons */
+.btn-paint {
+  background-color: #c7d9c8;
+  border: none;
+  color: #2e4633;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-paint:hover {
+  background-color: #9ebf9f;
+  transform: scale(1.05);
+}
+
+/* Go Back button (same look, left aligned) */
+.btn-back {
+  background-color: transparent;
+  border: 1px solid #666;
+  color: #333;
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+  background-color: #333;
+  color: white;
+}
+
+/* Sticky bar visual polish */
+.sticky-top {
+  border-bottom: 1px solid #e2e2e2;
+  backdrop-filter: blur(5px);
+}
+
+/* Fix overlapping Acrylic Paintings title */
+.custom-padding {
+  padding-top: 100px !important;
+}
+
+@media (max-width: 768px) {
+  .custom-padding {
+    padding-top: 100px !important;
+  }
+}
+
+/* Smooth scroll spacing so sections stop below sticky bar */
+:root {
+  --scroll-offset: 200px;
+}
+
+section {
+  scroll-margin-top: var(--scroll-offset);
+}
+
+/* Match ArtworkPage Go Back button style & position */
+/* Go Back button inside ArtworkPage (top-left corner of painting) */
+.artwork-back-btn {
+  position: absolute;
+  top: 15px;              /* aligns with sticky bar button */
+  left: 15px;             /* same padding from edge */
+  z-index: 10;            /* ensures it stays above painting */
+  background-color: #333; /* same dark color as sticky bar version */
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.artwork-back-btn:hover {
+  background-color: #000;
+  transform: scale(1.05);
+}
+
+/* Reuse PaintingsPage button shape */
+.btn-back {
+  background-color: transparent;
+  border: 1px solid #666;
+  color: #333;
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+  background-color: #333;
+  color: white;
+}
+/* Adjust Artwork layout so Go Back button sits beside painting, not over it */
+.artwork-left {
+  position: relative;
+  margin-left: 70px; /* shifts painting slightly right */
+}
+
+/* Keep painting aligned slightly right for spacing */
+.artwork-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px; /* spacing between button and frame */
+  margin-left: 60px;
+}
+/* Go Back button — same as PaintingsPage */
+/* Go Back button inside ArtworkPage (aligned with PaintingsPage style & position) */
+/* Go Back button – same position & style as sticky bar */
+.artwork-back-btn {
+  position: fixed;             /* fixed to viewport, not artwork */
+  top: 79px;                  /* exactly same level as sticky bar */
+  left: 16px;                  /* matches sticky bar horizontal spacing */
+  z-index: 3000;               /* stays on top */
+  background-color: transparent;
+  border: 1px solid #666;
+  color: #333;
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.artwork-back-btn:hover {
+  background-color: #333;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Slight shift to the right for the painting to balance spacing */
+.artwork-left {
+  position: relative;
+  margin-left: 150px; /* same distance as button offset */
+}
