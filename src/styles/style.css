@@ -1,3 +1,41 @@
+/* === Global Scaling & Responsive Adjustments === */
+
+/* Smooth scaling for the whole site */
+html {
+  font-size: 100%; /* base size (16px default) */
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 95%;
+  }
+}
+
+@media (max-width: 992px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 85%;
+  }
+}
+
+@media (max-width: 576px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 75%;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -416,4 +454,91 @@ section {
 .artwork-left {
   position: relative;
   margin-left: 150px; /* same distance as button offset */
+}
+/* === Navbar Responsive Scaling === */
+@media (max-width: 1200px) {
+  .navbar h4 {
+    font-size: 1.25rem; /* slightly smaller logo text */
+  }
+  .navbar .nav-link,
+  .navbar a {
+    font-size: 0.95rem;
+  }
+  .navbar .container {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar h4 {
+    font-size: 1.1rem;
+  }
+  .navbar .nav-link,
+  .navbar a {
+    font-size: 0.85rem;
+  }
+  .navbar i {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar h4 {
+    font-size: 1rem;
+  }
+  .navbar .nav-link,
+  .navbar a {
+    font-size: 0.8rem;
+  }
+  .navbar .container {
+    padding: 0 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar h4 {
+    font-size: 0.9rem;
+  }
+  .navbar .nav-link,
+  .navbar a {
+    font-size: 0.75rem;
+  }
+  .navbar .container {
+    gap: 0.3rem;
+  }
+}
+
+/* === Navbar Responsive Behavior === */
+
+/* Gradually shrink text on smaller screens */
+@media (max-width: 768px) {
+  .navbar h4 {
+    font-size: 1rem;
+  }
+  .navbar .nav-link,
+  .navbar a {
+    font-size: 0.85rem;
+  }
+}
+
+/* Hide left navigation links when the window is narrow */
+@media (max-width: 600px) {
+  .navbar .d-flex.align-items-center.gap-3:first-child {
+    display: none !important;
+  }
+
+  .navbar h4 {
+    font-size: 0.9rem;
+  }
+}
+
+/* Super small screens — hide icons too if needed */
+@media (max-width: 450px) {
+  .navbar .d-flex.align-items-center.gap-3:last-child {
+    display: none !important;
+  }
+
+  .navbar h4 {
+    font-size: 0.8rem;
+  }
 }

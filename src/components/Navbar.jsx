@@ -3,46 +3,38 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg bg-light shadow-sm fixed-top">
-      <div className="container-fluid d-flex justify-content-between align-items-center">
-        
-        {/* Left links */}
-        <div className="d-flex gap-3 ms-3">
-          <Link to="/" className="nav-link fw-semibold">
-            About Me
-          </Link>
-          <Link to="/" className="nav-link fw-semibold">
-            Paintings
-          </Link>
-          <Link to="/" className="nav-link fw-semibold">
-            Digital Illustrations
-          </Link>
+    <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+      <div className="container d-flex justify-content-between align-items-center">
+        {/* Left Menu */}
+        <div className="d-flex align-items-center gap-3">
+          <Link className="nav-link fw-semibold" to="/">Home</Link>
+          <Link className="nav-link fw-semibold" to="/paintings">Paintings</Link>
+          <Link className="nav-link fw-semibold" to="/digital">Digital Illustrations</Link>
         </div>
 
-        {/* Center title */}
+        {/* Center Logo */}
         <div className="position-absolute start-50 translate-middle-x">
-          <h5 className="m-0 fw-bold text-dark text-center">
-            🌸 Sarah Menla 🌸
-          </h5>
-        </div>
+  <h4 className="m-0 fw-bold text-dark text-center">🌸 Sarah Menla 🌸</h4>
+</div>
 
-        {/* Right icons */}
-        <div className="d-flex gap-3 me-3">
+
+        {/* Right Links */}
+        <div className="d-flex align-items-center gap-3">
           <a
-            href="https://youtube.com"
+            href="https://www.youtube.com/@sarahxart9911"
             target="_blank"
             rel="noopener noreferrer"
-            className="nav-link"
+            className="text-dark text-decoration-none"
           >
-            <i className="bi bi-youtube"></i> YouTube
+            <i className="bi bi-youtube me-1"></i> YouTube
           </a>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/sarah.xart/"
             target="_blank"
             rel="noopener noreferrer"
-            className="nav-link"
+            className="text-dark text-decoration-none"
           >
-            <i className="bi bi-instagram"></i> Instagram
+            <i className="bi bi-instagram me-1"></i> Instagram
           </a>
         </div>
       </div>
